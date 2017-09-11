@@ -173,6 +173,9 @@ def breadthFirstSearch(problem):
       
 def uniformCostSearch(problem):
   "Search the node of least total cost first. "
+  c = {}
+  cost = 0
+
   "*** YOUR CODE HERE ***"
   def heapToList(heap):
     l =[]
@@ -180,15 +183,21 @@ def uniformCostSearch(problem):
       l.append(i[1])
     return l
   def f(a):
-    return a[2]  
+    return c[a]
+
+  def inside(state,s):
+    for i in s:
+      if i[0] == state[0]:
+        return True
+    return False
 
   start_state = problem.getStartState()
   if(problem.isGoalState(start_state)):
     return [start_state]
+  c[(start_state,"",0)] = 0
 
   frontier = util.PriorityQueueWithFunction(f)
   # frontier.push((start_state,"South",1))
-  cost = 0
   frontier.push((start_state,"",0))
   explored = []
   solution = []
@@ -204,8 +213,10 @@ def uniformCostSearch(problem):
     successors = problem.getSuccessors(node[0])
     cost += 1
     for state in successors:
-      if not((state in explored) or (state in heapToList(frontier.heap))):
+      if not((inside(state,explored)) or (inside(state,heapToList(frontier.heap)))):
         previous[state] = node
+        c[state] = c[node] + state[2]
+
         if(problem.isGoalState(state[0])):
           node = state
           node1 = node
@@ -215,12 +226,13 @@ def uniformCostSearch(problem):
           print("Solution",solution[::-1])
           return solution[::-1]
         frontier.push(state)
-      elif (state in heapToList(frontier.heap)):
+      elif (inside(state,heapToList(frontier.heap))):
         st1 = frontier.findInHeap(state)
         if st1 != None:
           print("Difference",st1,state)                      
           if st1[1][2] < state[2]:
             frontier.delFromHeap(state)
+            c[state] = c[node] + state[2]
             frontier.push(st1[1])
 
 
@@ -236,6 +248,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
   "Search the node that has the lowest combined cost and heuristic first."
   "*** YOUR CODE HERE ***"
   cost = 0
+  c = {}
 
   def heapToList(heap):
     l =[]
@@ -244,15 +257,16 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     return l
 
   def f(a):
-    return cost + heuristic(a[0],problem)
+    return c[a] + heuristic(a[0],problem)
        
   start_state = problem.getStartState()
   if(problem.isGoalState(start_state)):
     return [start_state]
 
   frontier = util.PriorityQueueWithFunction(f)
-  # frontier.push((start_state,"South",1))
-  frontier.push((start_state,"",cost))
+
+  c[(start_state,"",0)] = 0
+  frontier.push((start_state,"",0))
   explored = []
   solution = []
   previous = {}
@@ -260,7 +274,6 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     if frontier.isEmpty():
       return []
     node = frontier.pop()
-    cost += 1
     if(problem.isGoalState(node[0])):      
       node1 = node
       while node1[0] != start_state:
@@ -271,19 +284,26 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
     explored.append(node)
     successors = problem.getSuccessors(node[0])
-    
+
+    def inside(state,s):
+      for i in s:
+        if i[0] == state[0]:
+          return True
+      return False
 
     for state in successors:
-      if not((state in explored) or (state in heapToList(frontier.heap))):
+      if not((inside(state,explored)) or (inside(state,heapToList(frontier.heap)))):
         previous[state] = node
+        c[state] = c[node] + node[2]
         frontier.push(state)
-      elif (state in heapToList(frontier.heap)):
+      elif (inside(state,heapToList(frontier.heap))):
+        print("Difference",previous[state],node)
         st1 = frontier.findInHeap(state)
         if st1 != None:
-          print("Difference",st1[0],f(state))                      
-          print("cost",cost)
-          if st1[0] < cost:
+          if c[state] > c[node] + state[2]:
+            print("delete")
             frontier.delFromHeap(state)
+            c[state] = c[node] + node[2]
             frontier.push(st1[1])
     
   
