@@ -1,5 +1,6 @@
 # AI-Nanodegree
-## Artificial Intelligence portfolio
+
+## Projects
 
 * Project 1: Sudoku Solver
 * Project 2: Isolation
