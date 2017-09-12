@@ -134,7 +134,12 @@ def breadthFirstSearch(problem):
     for i in heap:
       l.append(i[1])
     return l
-      
+  def inside(state,s):
+    for i in s:
+      if i[0] == state[0]:
+        return True
+    return False
+    
   start_state = problem.getStartState()
   if(problem.isGoalState(start_state)):
     return [start_state]
@@ -157,7 +162,7 @@ def breadthFirstSearch(problem):
     successors = problem.getSuccessors(node[0])
     cost += 1
     for state in successors:
-      if not((state in explored) or (state in heapToList(frontier.heap))):
+      if not(inside(state,explored) or (inside(state,heapToList(frontier.heap)))):
         previous[state] = node
         if(problem.isGoalState(state[0])):
           node = state
