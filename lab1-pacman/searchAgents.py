@@ -336,6 +336,8 @@ class CornersProblem(search.SearchProblem):
               visit[i] = 1
         s = sum(visit)      
 
+        
+
 
         # if (state[0],state[1]) == self.corners[0]:
         #   visit[0] = 1
