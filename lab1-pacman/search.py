@@ -142,8 +142,7 @@ def breadthFirstSearch(problem):
   frontier = util.PriorityQueue()
   # frontier.push((start_state,"South",1))
   cost = 0
-  print("start state",start_state)
-  frontier.push((start_state,"",1),cost)
+  frontier.push((start_state,"South",1),cost)
   explored = []
   solution = []
   previous = {}
@@ -166,7 +165,6 @@ def breadthFirstSearch(problem):
           while node1[0] != start_state:
             solution.append(node1[1])
             node1 = previous[node1]
-            print node1
           print("Solution",solution[::-1])
           return solution[::-1]
         frontier.push(state,cost) 

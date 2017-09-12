@@ -277,16 +277,35 @@ class CornersProblem(search.SearchProblem):
     self._expanded = 0 # Number of search nodes expanded
     
     "*** YOUR CODE HERE ***"
-    
+    self.legalActions = startingGameState.getLegalActions()
+    self.visited_corners = [0,0,0,0]
   def getStartState(self):
     "Returns the start state (in your state space, not the full Pacman state space)"
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # directions = {Directions.NORTH: (0, 1),
+    #                Directions.SOUTH: (0, -1),
+    #                Directions.EAST:  (1, 0),
+    #                Directions.WEST:  (-1, 0),
+    #                Directions.STOP:  (0, 0)}
+
+    return (self.startingPosition[0],self.startingPosition[1],0,0,0,0)
+    
     
   def isGoalState(self, state):
     "Returns whether this search state is a goal state of the problem"
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # print("st",state)
+    # return self.visited_corners == [1,1,1,1] and state == self.corners[3]
+    # if (state[0],state[1]) == self.corners[0]:
+    #   self.visited_corners[0] = 1
+    # elif (state[0],state[1]) == self.corners[1]:  
+    #   self.visited_corners[1] = 1
+    # elif (state[0],state[1]) == self.corners[2]:  
+    #   self.visited_corners[2] = 1
+    # elif (state[0],state[1]) == self.corners[3]:  
+    #   self.visited_corners[3] = 1
+    # print(state[2:])
+    return state == (state[0],state[1],1,1,1,1)
        
   def getSuccessors(self, state):
     """
@@ -299,18 +318,36 @@ class CornersProblem(search.SearchProblem):
      required to get there, and 'stepCost' is the incremental 
      cost of expanding to that successor
     """
-    
+    # print("starting",self.startingPosition)
     successors = []
+
     for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
-      # Add a successor state to the successor list if the action is legal
-      # Here's a code snippet for figuring out whether a new position hits a wall:
-      #   x,y = currentPosition
-      #   dx, dy = Actions.directionToVector(action)
-      #   nextx, nexty = int(x + dx), int(y + dy)
-      #   hitsWall = self.walls[nextx][nexty]
-      
-      "*** YOUR CODE HERE ***"
-      
+    
+      x,y = state[0],state[1]
+      dx, dy = Actions.directionToVector(action)
+      nextx, nexty = int(x + dx), int(y + dy)
+      if not self.walls[nextx][nexty]:
+        nextState = (nextx, nexty)
+        cost = 1
+        visit = [state[2],state[3],state[4],state[5]]
+        for i in range(0,len(visit)):
+          if(visit[i] == 0):
+            if (state[0],state[1]) == self.corners[i]:
+              visit[i] = 1
+        s = sum(visit)      
+
+
+        # if (state[0],state[1]) == self.corners[0]:
+        #   visit[0] = 1
+        # elif (state[0],state[1]) == self.corners[1]:  
+        #   visit[1] = 1
+        # elif (state[0],state[1]) == self.corners[2]:  
+        #   visit[2] = 1
+        # elif (state[0],state[1]) == self.corners[3]:  
+        #   visit[3] = 1
+
+        successors.append(((nextState[0],nextState[1],visit[0],visit[1],visit[2],visit[3]), action, cost))
+
     self._expanded += 1
     return successors
 
