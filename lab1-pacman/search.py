@@ -296,11 +296,13 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
     for state in successors:
       if not((inside(state,explored)) or (inside(state,heapToList(frontier.heap)))):
+        # print(state)
         previous[state] = node
         c[state] = c[node] + node[2]
         frontier.push(state)
       elif (inside(state,heapToList(frontier.heap))):
-        print("Difference",previous[state],node)
+        # print(previous[state])
+        # print("Difference",previous[state],node)
         st1 = frontier.findInHeap(state)
         if st1 != None:
           if c[state] > c[node] + state[2]:
