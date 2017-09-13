@@ -382,7 +382,7 @@ def cornersHeuristic(state, problem):
   c3 = (corners[3][0],corners[3][1])
 
   su = (1 - state[2])* util.manhattanDistance(s,c0) + (1 - state[3])* util.manhattanDistance(s,c1) + (1 - state[4])* util.manhattanDistance(s,c2) + (1 - state[5])* util.manhattanDistance(s,c3)
-  return su  # Default to trivial solution
+  return su
 
 class AStarCornersAgent(SearchAgent):
   "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
@@ -473,7 +473,11 @@ def foodHeuristic(state, problem):
   """
   position, foodGrid = state
   "*** YOUR CODE HERE ***"
-  return 0
+  # print(foodGrid.asList())
+  s = 0
+  for food in foodGrid.asList():
+    s += util.manhattanDistance(food,state[0])
+  return s
   
 class ClosestDotSearchAgent(SearchAgent):
   "Search for all food using a sequence of searches"
