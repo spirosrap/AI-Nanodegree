@@ -7,3 +7,4 @@
 
 ## Labs:
 * Lab 1: Pacman: Teach pacman to navigate its world.
+* Lab 2: Solving the Traveling Salesman Problem (TSP) with Simulated Annealing
