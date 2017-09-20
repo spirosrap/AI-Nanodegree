@@ -4,7 +4,7 @@
 
 * Project 1: Sudoku Solver
 * Project 2: Isolation: Build a Game-playing Agent
-
+* Project 3: Implement a Planning Search
 ## Labs:
 * Lab 1: Pacman: Teach pacman to navigate its world.
 * Lab 2: Solving the Traveling Salesman Problem (TSP) with Simulated Annealing
