@@ -11,6 +11,7 @@ from my_planning_graph import (
     PlanningGraph, PgNode_a, PgNode_s, mutexify
 )
 
+s = 0
 
 class TestPlanningGraphLevels(unittest.TestCase):
     def setUp(self):

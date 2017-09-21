@@ -415,9 +415,6 @@ class PlanningGraph():
         :return: bool
         """
         # TODO test for Inconsistent Effects between nodes
-        # print("a1 action",node_a1.action)
-        # print("a1 action",node_a1.action.effect_rem)
-        # print("a2 effect-pre-neg",node_a2.action.effect_add)
         for ef in node_a1.action.effect_add:
         	if ef in node_a2.action.effect_rem:
         		return True
@@ -442,6 +439,13 @@ class PlanningGraph():
         :return: bool
         """
         # TODO test for Interference between nodes
+        for ef in node_a1.action.effect_rem:
+            if ef in node_a2.action.precond_pos:
+                return True
+        for ef in node_a2.action.effect_rem:
+            if ef in node_a1.action.precond_pos:
+                return True
+
         return False
 
     def competing_needs_mutex(self, node_a1: PgNode_a, node_a2: PgNode_a) -> bool:
@@ -454,8 +458,33 @@ class PlanningGraph():
         :param node_a2: PgNode_a
         :return: bool
         """
-
         # TODO test for Competing Needs between nodes
+
+        # if len(node_a1.action.precond_pos) == 0:
+        #     if len(node_a2.action.precond_pos) != 0:
+        #         print("1")
+        #         return True
+        # if len(node_a1.action.precond_neg) == 0:
+        #     if len(node_a2.action.precond_neg) != 0:
+        #         print("2")
+        #         return True
+        for snode1 in node_a1.parents:
+            for snode2 in node_a2.parents:
+                print(snode1.symbol)
+                print(snode1.symbol==snode2.symbol)
+                if snode1.symbol==snode2.symbol:
+                    return True
+
+        for pre in node_a1.action.precond_pos + node_a1.action.precond_neg:
+            if pre in node_a2.action.precond_neg + node_a2.action.precond_pos:
+                print("3")
+                return True
+
+        # for pre in node_a1.action.precond_neg:
+        #     if pre in node_a2.action.precond_pos or pre in node_a2.action.precond_neg:
+        #         print("4")
+        #         return True
+
         return False
 
     def update_s_mutex(self, nodeset: set):
