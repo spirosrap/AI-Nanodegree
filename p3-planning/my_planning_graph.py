@@ -529,9 +529,12 @@ class PlanningGraph():
         # TODO implement
         # for each goal in the problem, determine the level cost, then add them together
 
-        # for action in self.all_actions:
-        # 	print(action)
-        # for goal in self.problem.goal:
-        # 	print(goal)
-        # 	print(goal in self.all_actions)
+        level = len(self.a_levels) - 1
+
+        for action in self.a_levels[level]:
+        	if not(action.is_persistent):
+	        	for snode in action.action.precond_pos:
+	        		level_sum+=1
+
+
         return level_sum
