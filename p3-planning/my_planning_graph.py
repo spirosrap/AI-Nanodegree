@@ -310,15 +310,6 @@ class PlanningGraph():
         #   to see if a proposed PgNode_a has prenodes that are a subset of the previous S level.  Once an
         #   action node is added, it MUST be connected to the S node instances in the appropriate s_level set.
         self.a_levels.append(set())
-        # if level == 0:
-        # 	actions = self.all_actions
-        # else:
-        # 	actions = self.a_levels[level - 1]
-        # 	actions =set()
-        # 	snodes = self.s_levels[level]
-        # 	for snode in snodes:
-        # 		anodes = snode.parents
-        # 		actions = actions.union(anodes)
         actions = self.all_actions
         for action in actions:
         	proposed = PgNode_a(action)
@@ -460,30 +451,12 @@ class PlanningGraph():
         """
         # TODO test for Competing Needs between nodes
 
-        # if len(node_a1.action.precond_pos) == 0:
-        #     if len(node_a2.action.precond_pos) != 0:
-        #         print("1")
-        #         return True
-        # if len(node_a1.action.precond_neg) == 0:
-        #     if len(node_a2.action.precond_neg) != 0:
-        #         print("2")
-        #         return True
         for snode1 in node_a1.parents:
             for snode2 in node_a2.parents:
-                print(snode1.symbol)
-                print(snode1.symbol==snode2.symbol)
-                if snode1.symbol==snode2.symbol:
-                    return True
-
-        for pre in node_a1.action.precond_pos + node_a1.action.precond_neg:
-            if pre in node_a2.action.precond_neg + node_a2.action.precond_pos:
-                print("3")
-                return True
-
-        # for pre in node_a1.action.precond_neg:
-        #     if pre in node_a2.action.precond_pos or pre in node_a2.action.precond_neg:
-        #         print("4")
-        #         return True
+            	if snode2.is_mutex(snode1):
+            		return True            		        	
+            	if (snode1.symbol == snode2.symbol):
+            		return True                
 
         return False
 
