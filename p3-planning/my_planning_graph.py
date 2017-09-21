@@ -514,10 +514,8 @@ class PlanningGraph():
         :return: bool
         """
         # TODO test for Inconsistent Support between nodes
-        s1_actions = node_s1.parents
-        s2_actions = node_s2.parents
-        for action1 in s1_actions:
-        	for action2 in s2_actions:
+        for action1 in node_s1.parents:
+        	for action2 in node_s2.parents:
         		if not(action1.is_mutex(action2)):
         			return False
         return True
