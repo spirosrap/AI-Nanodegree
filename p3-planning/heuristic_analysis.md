@@ -2,7 +2,7 @@
 
 ## Provide an optimal plan for Problems 1, 2, and 3.
 
-###Problem 1
+### Problem 1
 *Plan length: 6*
 
 * Load(C1, P1, SFO)
@@ -12,7 +12,7 @@
 * Unload(C1, P1, JFK)
 * Unload(C2, P2, SFO)
 
-###Problem 2
+### Problem 2
 *Plan length: 9*
 
 * Load(C1, P1, SFO)
@@ -26,7 +26,7 @@
 * Unload(C1, P1, JFK)
 
 
-###Problem 3
+### Problem 3
 *Plan length: 12*
 
 * Load(C1, P1, SFO)
