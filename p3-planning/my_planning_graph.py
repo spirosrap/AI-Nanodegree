@@ -311,13 +311,14 @@ class PlanningGraph():
         #   action node is added, it MUST be connected to the S node instances in the appropriate s_level set.
         self.a_levels.append(set())
         actions = self.all_actions
+        slevels = self.s_levels[level]
         for action in actions:
         	proposed = PgNode_a(action)
-        	if(proposed.prenodes.issubset(self.s_levels[level])):
+        	if(proposed.prenodes.issubset(slevels)):
         		self.a_levels[level].add(proposed)
-        		for s in self.s_levels[level]:
+        		for s in slevels:
 	        		s.children.add(action)
-	        		proposed.parents.add(s)
+	        	proposed.parents = proposed.parents.union(slevels)
 
 	    # print(len(a_levels[level]))
 
@@ -340,13 +341,14 @@ class PlanningGraph():
         #   parent sets of the S nodes
         self.s_levels.append(set())
         actions = self.a_levels[level - 1]
-        new_snodes = set()
         for action in actions:
-        	for snode in action.effnodes:
-        		new_snodes.add(snode)
-        		action.children.add(snode)
-        		snode.parents.add(action)
-        		self.s_levels[level].add(snode)	
+        	action.children = action.children.union(action.effnodes)
+        	action.parents = action.parents.union(action.effnodes)
+        	self.s_levels[level] = self.s_levels[level].union(action.effnodes)
+        	# for snode in action.effnodes:
+        	# 	action.children.add(snode)
+        	# 	snode.parents.add(action)
+        	# 	self.s_levels[level].add(snode)	
         	
 
     def update_a_mutex(self, nodeset):
@@ -453,10 +455,10 @@ class PlanningGraph():
 
         for snode1 in node_a1.parents:
             for snode2 in node_a2.parents:
-            	if snode2.is_mutex(snode1):
-            		return True            		        	
             	if (snode1.symbol == snode2.symbol):
             		return True                
+            	if snode2.is_mutex(snode1):
+            		return True            		        	
 
         return False
 
@@ -493,9 +495,8 @@ class PlanningGraph():
         :return: bool
         """
         # TODO test for negation between nodes
-        if node_s1.symbol == node_s2.symbol and node_s1.is_pos != node_s2.is_pos:
-        	return True
-        return False
+
+        return node_s1.symbol == node_s2.symbol and node_s1.is_pos != node_s2.is_pos
 
     def inconsistent_support_mutex(self, node_s1: PgNode_s, node_s2: PgNode_s):
         """
