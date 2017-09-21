@@ -46,13 +46,13 @@
 *optimality, time elapsed, number of node expansions*
 
 ### Breadth First Search(```breadth_first_search```)
-![image1](bfs.png)
+![bfs](bfs.png)
 
 ### Depth First Search (```depth_first_graph_search```)
-![image2](dfs.png)
+![dfs](dfs.png)
 
 ### Uniform Cost Search (```uniform_cost_search```)
-![image3](ucs.png)
+![ucs](ucs.png)
 
 
 Depth first search does not provide an optimal plan. For example, for problem 2 the plan includes over 200 steps whereas according to other algorithms there's a plan with 9 steps. However, the solution is found rapidly compared to the other search algorithms. Also, as it would be expected, the node expansions are also minimal compared to the other algorithms.
