@@ -533,9 +533,8 @@ class PlanningGraph():
         level = len(self.a_levels) - 1
 
         for action in self.a_levels[level]:
-        	if not(action.is_persistent):
-	        	for snode in action.action.precond_pos:
-	        		level_sum+=1
+            if not(action.is_persistent):
+                level_sum += len(action.action.precond_pos)                
 
 
         return level_sum
