@@ -40,6 +40,8 @@ Instead, you will implement domain-independent heuristics.
 All problems are in the Air Cargo domain.  They have the same action schema defined, but different initial states and goals.
 
 - Air Cargo Action Schema:
+- 
+
 ```
 Action(Load(c, p, a),
 	PRECOND: At(c, a) ∧ At(p, a) ∧ Cargo(c) ∧ Plane(p) ∧ Airport(a)
@@ -53,6 +55,7 @@ Action(Fly(p, from, to),
 ```
 
 - Problem 1 initial state and goal:
+- 
 ```
 Init(At(C1, SFO) ∧ At(C2, JFK) 
 	∧ At(P1, SFO) ∧ At(P2, JFK) 
@@ -62,6 +65,7 @@ Init(At(C1, SFO) ∧ At(C2, JFK)
 Goal(At(C1, JFK) ∧ At(C2, SFO))
 ```
 - Problem 2 initial state and goal:
+- 
 ```
 Init(At(C1, SFO) ∧ At(C2, JFK) ∧ At(C3, ATL) 
 	∧ At(P1, SFO) ∧ At(P2, JFK) ∧ At(P3, ATL) 
@@ -71,6 +75,7 @@ Init(At(C1, SFO) ∧ At(C2, JFK) ∧ At(C3, ATL)
 Goal(At(C1, JFK) ∧ At(C2, SFO) ∧ At(C3, SFO))
 ```
 - Problem 3 initial state and goal:
+- 
 ```
 Init(At(C1, SFO) ∧ At(C2, JFK) ∧ At(C3, ATL) ∧ At(C4, ORD) 
 	∧ At(P1, SFO) ∧ At(P2, JFK) 
