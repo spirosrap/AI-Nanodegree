@@ -7,6 +7,7 @@
 * Project 1: Sudoku Solver :heavy_check_mark:
 * Project 2: Isolation: Build a Game-playing Agent :heavy_check_mark:
 * Project 3: Implement a Planning Search :heavy_check_mark:
+* Project 4: Build a Sign Language Recognizer :construction:
 
 ### Labs:
 * Lab 1: Pacman: Teach pacman to navigate its world. :heavy_check_mark:
