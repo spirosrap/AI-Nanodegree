@@ -1,4 +1,4 @@
-# AI-Nanodegree
+# Artificial Intelligence Nanodegree
 
 ## Term 1: Foundations of AI
 
