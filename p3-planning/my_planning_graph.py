@@ -539,7 +539,7 @@ class PlanningGraph():
             for l_index, levelStates in enumerate(self.s_levels):
                 states = set()
                 for state in levelStates:
-                    if state.is_pos: # The goal states are positive
+                    if state.is_pos: # Because the goal states are positive
                         states.add(state.symbol)
                 if goal in states:
                     level_sum += l_index
