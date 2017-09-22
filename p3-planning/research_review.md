@@ -17,4 +17,11 @@ WARPLAN (A case-based reasoning system that used a "skeleton model"[(link)](http
 
 ### GRAPHPLAN system
 
-Avrim Blum and Merrick Furst (1995, 1997) introduced their GRAPHPLAN system, which was orders of magnitude faster than the other systems of the time.
+Avrim Blum and Merrick Furst (1995, 1997) introduced their GRAPHPLAN system, which was orders of magnitude faster than the other systems of the time. The GRAPHPLAN algorithm repeatedly adds a level on the planning graph until all goals are non-mutex. After that, the algorithm searches for a plan that solves the problem. Helmert (2001) analyzed several planning problems and found that GRAPHPLAN and SATPLAN are better for NP-Hard domains while search based approaches do better in other domains where solutions can be found without backtracking.
+
+### References
+
+* Helmert, M. (2001). On the complexity of planning in transportation domains. In ECP-01.
+* [Catalogue of artificial Intelligence tools by ALan Bundy](https://books.google.gr/books?id=wJCqCAAAQBAJ&pg=PA51&lpg=PA51&dq=WARPLAN+planner+Waldinger&source=bl&ots=p-qACMDiNQ&sig=WNcoEjupDXkrlpDrfnLYmIy0IFs&hl=el&sa=X&ved=0ahUKEwjXo9vZnrnWAhVCfhoKHdtcABsQ6AEINjAB#v=onepage&q=WARPLAN%20planner%20Waldinger&f=false)
+* [PDDL+: Modelling Continuous Time-dependent Effects](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.15.5965)
+* Artificial Intelligence: A Modern Approach (Third edition) by Stuart Russell and Peter Norvig
