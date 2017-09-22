@@ -1,5 +1,7 @@
 # AI-Nanodegree
 
+# Term 1: Foundations of AI
+
 ## Projects
 
 * Project 1: Sudoku Solver
