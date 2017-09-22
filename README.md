@@ -1,4 +1,4 @@
-# Artificial Intelligence Nanodegree ![image](udacity.jpg)
+# ![image](udacity.jpg) Artificial Intelligence Nanodegree 
 
 ## Term 1: Foundations of AI
 
