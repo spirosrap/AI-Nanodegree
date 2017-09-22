@@ -530,11 +530,19 @@ class PlanningGraph():
         # TODO implement
         # for each goal in the problem, determine the level cost, then add them together
 
-        level = len(self.a_levels) - 1
-
-        for action in self.a_levels[level]:
-            if not(action.is_persistent):
-                level_sum += len(action.action.precond_pos)                
-
+        # From the forum:
+        # Determine which level is the first level where a goal appears. Do that ￼ for each goal Add up all those numbers 
+        # That is the answer. So if you have two goals, one of which first appears at level 3, and the other first appears at level 4, 
+        # the level sum is 7.
+        
+        for goal in self.problem.goal:
+            for l_index, levelStates in enumerate(self.s_levels):
+                states = set()
+                for state in levelStates:
+                    if state.is_pos: # The goal states are positive
+                        states.add(state.symbol)
+                if goal in states:
+                    level_sum += l_index
+                    break
 
         return level_sum
