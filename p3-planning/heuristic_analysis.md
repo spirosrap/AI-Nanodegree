@@ -41,7 +41,6 @@
 * Unload(C3, P1, JFK)
 * Unload(C2, P2, SFO)
 * Unload(C1, P1, JFK)
-* 
 
 ## Compare and contrast non-heuristic search result metrics.
 *optimality, time elapsed, number of node expansions*
@@ -61,7 +60,13 @@ Depth first search does not provide an optimal plan (Finds the first solution th
 However, the solution is found rapidly compared to the other search algorithms. Also, as it would be expected, the node expansions are also minimal compared to the other algorithms.
 
 The Breadth first search and uniform cost search algorithms provide optimal plans(6,9,12 steps respectively). However, the nodes expansions increase by a lot with the size of the problem. The simplest problem needs around 50 expansions whereas the most complex (3d) in the range of thousands. These two algorithms run for about the same time for each problem and require similar node expansions.
-
+***
+***
+***
+***
+***
+***
+***
 ## Compare and contrast heuristic search result metrics using A* with the "ignore preconditions" and "level-sum" heuristics
 
 ### What was the best heuristic used in these problems
@@ -70,7 +75,26 @@ The Breadth first search and uniform cost search algorithms provide optimal plan
 
 If we exclude running time which can be a not very good metric considering python's limitations, the level sum heuristic appears to use the less expansions and goal tests. The level sum heuristic uses an order of magnitude less expansions than the ignore preconditions heuristic. The running time of the two heuristic algorithms is similar but to be accurate "ignore preconditions" takes less time. If the number of expansions (which might give an indication of space requirements) is not the first priority, it could be also a good option.
 
-* I used pypy3 to run the algorithms
+*I used pypy3 to run the algorithms
+
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
+***
 
 ### Was it better than non-heuristic search planning methods for all problems? Why or why not?
 ![heuristics](line_chart.svg)
