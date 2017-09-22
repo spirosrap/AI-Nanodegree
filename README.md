@@ -14,3 +14,7 @@
 * Lab 3: Constraint Satisfaction: Solving the 8-Queens problem
 
 ## Term 2: Deep Learning and Applications
+
+### Projects
+
+### Labs:
