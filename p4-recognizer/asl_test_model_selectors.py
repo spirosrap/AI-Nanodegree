@@ -1,5 +1,6 @@
 from unittest import TestCase
-
+from unittest import TestLoader
+import unittest
 from asl_data import AslDb
 from my_model_selectors import (
     SelectorConstant, SelectorBIC, SelectorDIC, SelectorCV,
@@ -37,3 +38,7 @@ class TestSelectors(TestCase):
         self.assertGreaterEqual(model.n_components, 2)
         model = SelectorDIC(self.sequences, self.xlengths, 'TOY').select()
         self.assertGreaterEqual(model.n_components, 2)
+
+
+suite = unittest.TestLoader().loadTestsFromModule(TestSelectors())
+unittest.TextTestRunner().run(suite)

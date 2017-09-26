@@ -46,6 +46,20 @@ class ModelSelector(object):
                 print("failure on {} with {} states".format(self.this_word, num_states))
             return None
 
+    def base_model_CV(self, num_states,X,lengths):
+        # with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", category=DeprecationWarning)
+        # warnings.filterwarnings("ignore", category=RuntimeWarning)
+        try:
+            hmm_model = GaussianHMM(n_components=num_states, covariance_type="diag", n_iter=1000,
+                                    random_state=self.random_state, verbose=False).fit(X, lengths)
+            if self.verbose:
+                print("model created for {} with {} states".format(self.this_word, num_states))
+            return hmm_model
+        except:
+            if self.verbose:
+                print("failure on {} with {} states".format(self.this_word, num_states))
+            return None
 
 class SelectorConstant(ModelSelector):
     """ select the model with value self.n_constant
@@ -75,9 +89,27 @@ class SelectorBIC(ModelSelector):
         :return: GaussianHMM object
         """
         warnings.filterwarnings("ignore", category=DeprecationWarning)
-
+        best_num_components = self.n_constant
         # TODO implement model selection based on BIC scores
-        raise NotImplementedError
+        bic = float("inf")
+        for components in range(self.min_n_components,self.max_n_components + 1):
+        	try:
+	        	model = self.base_model(components)
+	        	logL = model.score(self.X, self.lengths)
+	        	n = components
+	        	d = len(self.X[0])
+	        	p = n**2 + 2*n*d - 1 # https://discussions.udacity.com/t/number-of-parameters-bic-calculation/233235/17?u=spiros
+	        	logN = math.log(len(self.X)) # https://discussions.udacity.com/t/number-of-data-points-bic-calculation/235294/4?u=spiros
+	        	newbic = -2*logL + p * logN
+	        	if(newbic < bic):
+	        		bic = newbic
+	        		best_num_components = n
+	        except:
+	        	pass
+
+        return self.base_model(best_num_components)
+
+        # raise NotImplementedError
 
 
 class SelectorDIC(ModelSelector):
@@ -94,7 +126,27 @@ class SelectorDIC(ModelSelector):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
 
         # TODO implement model selection based on DIC scores
-        raise NotImplementedError
+        dic = float("-inf")
+        best_num_components = self.n_constant
+        for components in range(self.min_n_components,self.max_n_components + 1):
+        	try:
+	        	model = self.base_model(components)
+		        logPXi = model.score(self.X, self.lengths)
+	        	n = components
+		        M = len(self.words)
+
+		        ta = [model.score(self.hwords[word][0],self.hwords[word][1]) for word in self.hwords.keys() if word != self.this_word]
+
+		        newdic = logPXi - np.average(ta)
+	        	if(newdic > dic):
+	        		dic = newdic
+	        		best_num_components = n
+	        except:
+	        	pass
+
+        return self.base_model(best_num_components)
+
+        # raise NotImplementedError
 
 
 class SelectorCV(ModelSelector):
@@ -104,6 +156,31 @@ class SelectorCV(ModelSelector):
 
     def select(self):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
+        word_sequences = self.sequences
+        split_method = KFold()
+        logPXtest = float("-inf")
+        best_num_components = self.n_constant
+        for components in range(self.min_n_components,self.max_n_components + 1):
+        	logPxis = []
 
-        # TODO implement model selection using CV
-        raise NotImplementedError
+        	try:
+        		if(len(word_sequences) < 3):
+	        		model = self.base_model(components)
+	        		newlogP = model.score(self.X, self.lengths)
+	        		if newlogP > logPXtest:
+	        			logPXtest = newlogP
+	        			best_num_components = components
+	        	else:
+			        for cv_train_idx, cv_test_idx in split_method.split(word_sequences):
+			        	X_train, lengths_train = combine_sequences(cv_train_idx,self.sequences)
+			        	X_test, lengths_test = combine_sequences(cv_test_idx,self.sequences)
+			        	model = self.base_model_CV(components,X_train,lengths_train)
+			        	logPxis.append(model.score(X_test, lengths_test))
+			        if(np.average(logPxis) > logPXtest):
+			        	logPXtest = np.average(logPxis)
+			        	best_num_components = components
+        	except:
+        		pass
+ 
+        return self.base_model(best_num_components)     			        	        
+
