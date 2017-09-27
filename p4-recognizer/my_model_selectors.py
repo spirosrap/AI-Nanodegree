@@ -90,6 +90,7 @@ class SelectorBIC(ModelSelector):
         """
         warnings.filterwarnings("ignore", category=DeprecationWarning)
         best_num_components = self.n_constant
+        best_model = self.base_model(best_num_components)        
         # TODO implement model selection based on BIC scores
         bic = float("inf")
         for components in range(self.min_n_components,self.max_n_components + 1):
@@ -103,11 +104,11 @@ class SelectorBIC(ModelSelector):
 	        	newbic = -2*logL + p * logN
 	        	if(newbic < bic):
 	        		bic = newbic
-	        		best_num_components = n
+	        		best_model = model
 	        except:
 	        	pass
 
-        return self.base_model(best_num_components)
+        return best_model
 
         # raise NotImplementedError
 
@@ -128,6 +129,7 @@ class SelectorDIC(ModelSelector):
         # TODO implement model selection based on DIC scores
         dic = float("-inf")
         best_num_components = self.n_constant
+        best_model = self.base_model(best_num_components)
         for components in range(self.min_n_components,self.max_n_components + 1):
         	try:
 	        	model = self.base_model(components)
@@ -140,11 +142,11 @@ class SelectorDIC(ModelSelector):
 		        newdic = logPXi - np.average(ta)
 	        	if(newdic > dic):
 	        		dic = newdic
-	        		best_num_components = n
+	        		best_model = model
 	        except:
 	        	pass
 
-        return self.base_model(best_num_components)
+        return best_model
 
         # raise NotImplementedError
 
@@ -157,20 +159,23 @@ class SelectorCV(ModelSelector):
     def select(self):
         warnings.filterwarnings("ignore", category=DeprecationWarning)
         word_sequences = self.sequences
-        split_method = KFold()
+        if(len(self.sequences) == 1):
+        	split_method = []
+        else:
+        	split_method = KFold(n_splits=min(3,len(self.sequences)))
         logPXtest = float("-inf")
         best_num_components = self.n_constant
         for components in range(self.min_n_components,self.max_n_components + 1):
         	logPxis = []
 
         	try:
-        		if(len(word_sequences) < 3):
+        		if(len(self.sequences) == 1):
 	        		model = self.base_model(components)
 	        		newlogP = model.score(self.X, self.lengths)
 	        		if newlogP > logPXtest:
 	        			logPXtest = newlogP
 	        			best_num_components = components
-	        	else:
+	        	else:		
 			        for cv_train_idx, cv_test_idx in split_method.split(word_sequences):
 			        	X_train, lengths_train = combine_sequences(cv_train_idx,self.sequences)
 			        	X_test, lengths_test = combine_sequences(cv_test_idx,self.sequences)
