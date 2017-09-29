@@ -101,7 +101,7 @@ class SelectorBIC(ModelSelector):
 	        	d = len(self.X[0])
 	        	p = n**2 + 2*n*d - 1 # https://discussions.udacity.com/t/number-of-parameters-bic-calculation/233235/17?u=spiros
 	        	logN = math.log(len(self.X)) # https://discussions.udacity.com/t/number-of-data-points-bic-calculation/235294/4?u=spiros
-	        	newbic = -2*logL + p * logN
+	        	newbic = -2*logL + 1.0*p * logN
 	        	if(newbic < bic):
 	        		bic = newbic
 	        		best_model = model
