@@ -1,6 +1,6 @@
 # ![image](udacity.jpg) Artificial Intelligence Nanodegree 
 
-## Term 1: Foundations of AI :heavy_check_mark:
+## Term 1: Foundations of AI
 
 ### Projects
 
