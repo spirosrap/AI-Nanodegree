@@ -473,12 +473,16 @@ def foodHeuristic(state, problem):
   """
   position, foodGrid = state
   "*** YOUR CODE HERE ***"
-  # print(foodGrid.asList())
   s = 0
+  t = []
   for food in foodGrid.asList():
     s += util.manhattanDistance(food,state[0])
-  return s
-  
+    t.append(util.manhattanDistance(food,state[0]))
+  if (len(foodGrid.asList()) == 0):
+    return 0  
+  # return s/len(foodGrid.asList())
+  return max(t)
+
 class ClosestDotSearchAgent(SearchAgent):
   "Search for all food using a sequence of searches"
   def registerInitialState(self, state):
@@ -609,4 +613,5 @@ def mazeDistance(point1, point2, gameState):
   assert not walls[x1][y1], 'point1 is a wall: ' + point1
   assert not walls[x2][y2], 'point2 is a wall: ' + str(point2)
   prob = PositionSearchProblem(gameState, start=point1, goal=point2, warn=False)
+  prob.visualize = False
   return len(search.bfs(prob))
