@@ -16,5 +16,8 @@
 
 ## Term 2: Deep Learning and Applications
 
+### Projects
+* Project 1: 
 
-
+### Mini Projects
+* Mini Project 1: Student Admissions in Keras
