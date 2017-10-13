@@ -14,10 +14,10 @@
 * Lab 2: Solving the Traveling Salesman Problem (TSP) with Simulated Annealing :heavy_check_mark:
 * Lab 3: Constraint Satisfaction: Solving the 8-Queens problem :heavy_check_mark:
 
-## Term 2: Deep Learning and Applications
+## Term 2: Deep Learning and Applications :construction:
 
 ### Projects
-* Project 1: 
+* Project 1: Dog Breed Classifier :construction:
 
 ### Mini Projects
 * Mini Project 1: Student Admissions in Keras :heavy_check_mark:
