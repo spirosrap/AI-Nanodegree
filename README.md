@@ -1,4 +1,4 @@
-# ![image](udacity.jpg) Artificial Intelligence Nanodegree 
+# ![image](udacity.jpg) Artificial Intelligence Nanodegree
 
 ## Term 1: Foundations of AI :rocket:
 
@@ -24,4 +24,4 @@
 * Mini Project 2: Using Keras to analyze IMDB Movie Data :heavy_check_mark:
 * Mini Project 3: Training an MLP on MNIST :heavy_check_mark:
 * Mini Project 4: Train a CNN to classify images from the CIFAR-10 database :heavy_check_mark:
-* Mini Project 5: Train a CNN on augmented images from the CIFAR-10 database :heavy_check_mark:
+* Mini Project 5: Train a CNN on augmented images from the CIFAR-10 database :heavy_check_mark: 
