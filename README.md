@@ -26,7 +26,7 @@
 
 ### (Old Version) Projects
 
-* Project 1: Dog Breed Classifier :heavy_check_mark:)
+* Project 1: Dog Breed Classifier :heavy_check_mark:
 
 ### (Old Version) Mini Projects
 * Mini Project 1: Student Admissions in Keras :heavy_check_mark:
