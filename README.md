@@ -17,9 +17,18 @@
 ## Term 2: Deep Learning and Applications :construction:
 
 ### Projects
-* Project 1: Dog Breed Classifier :construction:
 
 ### Mini Projects
+
+* Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva
+
+***
+
+### (Old Version) Projects
+
+* Project 1: Dog Breed Classifier :heavy_check_mark:)
+
+### (Old Version) Mini Projects
 * Mini Project 1: Student Admissions in Keras :heavy_check_mark:
 * Mini Project 2: Using Keras to analyze IMDB Movie Data :heavy_check_mark:
 * Mini Project 3: Training an MLP on MNIST :heavy_check_mark:
