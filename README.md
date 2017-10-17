@@ -20,7 +20,7 @@
 
 ### Mini Projects
 
-* Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavycheckmark:
+* Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva : heavy_check_mark:
 
 ***
 
