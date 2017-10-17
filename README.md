@@ -17,7 +17,7 @@
 ## Term 2: Deep Learning and Applications :construction:
 
 ### Projects
-
+* Project 1: Facial Keypoint Detection :construction:
 ### Mini Projects
 
 * Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavy_check_mark:
