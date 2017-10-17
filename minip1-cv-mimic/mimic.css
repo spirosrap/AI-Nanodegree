@@ -10,7 +10,7 @@ div.top {
 
 #camera { width: 640px; height: 480px; padding: 0; }
 
-#game { height: 120px; }
+#game { height: 140px; }
 
 #target {
   height: 80px;
@@ -24,6 +24,10 @@ div.top {
 #time {
   font-family: Courier, monospace; font-size: 10pt; font-weight: bold;
 }
+#gameresult {
+  font-family: Courier, monospace; font-size: 12pt; font-weight: bold;
+}
+
 
 
 #results {

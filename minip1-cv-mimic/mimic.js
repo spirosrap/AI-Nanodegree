@@ -38,9 +38,6 @@ function setScore(correct, total) {
   $("#score").html("Score: " + correct + " / " + total);
 }
 
-function setTime(time) {
-  $("#time").html("Time Left: " + time);
-}
 
 
 // Display log messages and tracking results
@@ -191,23 +188,70 @@ function drawEmoji(canvas, img, face) {
 // - Unicode values for all emojis recognized by Affectiva are provided above in the list 'emojis'
 // - To check for a match, you can convert the dominant emoji to unicode using the toUnicode() function
 var targetEmoji = 128528
-
-function update(faces,timestamp){
-  // ctx.font = "48px serif";
-
-  setTargetEmoji(targetEmoji);
-  if (faces.length > 0) {
-	  if (toUnicode(faces[0].emojis.dominantEmoji) == targetEmoji){
-	  	targetEmoji = emojis[Math.floor(Math.random() * 5) + 1];
-	  	setTargetEmoji(targetEmoji);
-	  }
+var score = 0
+var time = 0
+var gameTime = 0
+var emj = [9786,128515,128521,128535,128545,128563,128561]
+var timeB = 0
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
   }
-  setScore(5,10);
-  setTime(0);
+}
+
+function setTime(time) {
+  $("#time").html("Time Left: " + time);
+}
+
+function setResult(result) {
+  $("#gameresult").html("Result: " + result);
 }
 
 
-// Optional:
+function update(faces,timestamp){
+  // ctx.font = "48px serif";
+  setTime(60 - Math.round(timestamp - gameTime));
+
+  if (timestamp - gameTime < 60 && score < 10){
+	  setTargetEmoji(targetEmoji);
+
+	  if (faces.length > 0) {
+		  if (toUnicode(faces[0].emojis.dominantEmoji) == targetEmoji){
+		  	targetEmoji = emj[Math.floor(Math.random() * 5) + 1];
+		  	setTargetEmoji(targetEmoji);
+		  	score += 1
+		  	setScore(score,10);
+		  	time = timestamp
+		  }
+		  if (timestamp - time > 5){
+		  	targetEmoji = emj[Math.floor(Math.random() * 5) + 1];
+		  	setTargetEmoji(targetEmoji);
+		  	// score -= 1
+		  	// setScore(score,10);
+		  	time = timestamp	  	
+		  }
+	  }	  	  
+  } else if (score < 10){
+  		setResult("Lost");
+	  	setScore(0,10);
+	  	setTime(Math.round(timestamp - gameTime));
+	  	gameTime = timestamp
+	  	score = 0
+  } else {
+  	    setResult("Won");
+	  	sleep(5000)
+	  	setScore(0,10);
+	  	setTime(Math.round(timestamp - gameTime));
+	  	gameTime = timestamp
+	  	score = 0
+  }
+}
+
+
+s// Optional:
 // - Define an initialization/reset function, and call it from the "onInitializeSuccess" event handler above
 // - Define a game reset function (same as init?), and call it from the onReset() function above
 
