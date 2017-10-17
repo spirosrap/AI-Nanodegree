@@ -21,7 +21,6 @@ detector.detectAllAppearance();
 
 // Unicode values for all emojis Affectiva can detect
 var emojis = [ 128528, 9786, 128515, 128524, 128527, 128521, 128535, 128539, 128540, 128542, 128545, 128563, 128561 ];
-
 // Update target emoji being displayed by supplying a unicode value
 function setTargetEmoji(code) {
   $("#target").html("&#" + code + ";");
@@ -38,6 +37,11 @@ function toUnicode(c) {
 function setScore(correct, total) {
   $("#score").html("Score: " + correct + " / " + total);
 }
+
+function setTime(time) {
+  $("#time").html("Time Left: " + time);
+}
+
 
 // Display log messages and tracking results
 function log(node_name, msg) {
@@ -131,7 +135,7 @@ detector.addEventListener("onImageResultsSuccess", function(faces, image, timest
     // Call functions to draw feature points and dominant emoji (for the first face only)
     drawFeaturePoints(canvas, image, faces[0]);
     drawEmoji(canvas, image, faces[0]);
-
+	update(faces,timestamp);
     // TODO: Call your function to run the game (define it first!)
     // <your code here>
   }
@@ -169,7 +173,9 @@ function drawEmoji(canvas, img, face) {
 
   // TODO: Set the font and style you want for the emoji
   // <your code here>
-  
+
+  ctx.font = "48px serif";
+  ctx.fillText(face.emojis.dominantEmoji, face.featurePoints[10].x, face.featurePoints[10].y);
   // TODO: Draw it using ctx.strokeText() or fillText()
   // See: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText
   // TIP: Pick a particular feature point as an anchor so that the emoji sticks to your face
@@ -184,6 +190,22 @@ function drawEmoji(canvas, img, face) {
 // - You will have to pass in emojis as unicode values, e.g. setTargetEmoji(128578) for a simple smiley
 // - Unicode values for all emojis recognized by Affectiva are provided above in the list 'emojis'
 // - To check for a match, you can convert the dominant emoji to unicode using the toUnicode() function
+var targetEmoji = 128528
+
+function update(faces,timestamp){
+  // ctx.font = "48px serif";
+
+  setTargetEmoji(targetEmoji);
+  if (faces.length > 0) {
+	  if (toUnicode(faces[0].emojis.dominantEmoji) == targetEmoji){
+	  	targetEmoji = emojis[Math.floor(Math.random() * 5) + 1];
+	  	setTargetEmoji(targetEmoji);
+	  }
+  }
+  setScore(5,10);
+  setTime(0);
+}
+
 
 // Optional:
 // - Define an initialization/reset function, and call it from the "onInitializeSuccess" event handler above

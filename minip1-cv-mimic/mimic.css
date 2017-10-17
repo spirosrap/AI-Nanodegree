@@ -21,6 +21,11 @@ div.top {
   font-family: Courier, monospace; font-size: 12pt; font-weight: bold;
 }
 
+#time {
+  font-family: Courier, monospace; font-size: 10pt; font-weight: bold;
+}
+
+
 #results {
   min-height: 160px;
   font-size: 10pt;
