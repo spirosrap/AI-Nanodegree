@@ -251,7 +251,7 @@ function update(faces,timestamp){
 }
 
 
-s// Optional:
+// Optional:
 // - Define an initialization/reset function, and call it from the "onInitializeSuccess" event handler above
 // - Define a game reset function (same as init?), and call it from the onReset() function above
 
