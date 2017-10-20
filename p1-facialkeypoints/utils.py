@@ -48,7 +48,7 @@ def plot_data(img, landmarks, axis):
         landmarks[1::2], 
         marker='o', 
         c='c', 
-        s=40)
+        s=20)
 
 def plot_keypoints(img_path, 
                   face_cascade=cv2.CascadeClassifier('haarcascade_frontalface_alt.xml'),
