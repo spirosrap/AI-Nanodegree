@@ -18,6 +18,7 @@
 
 ### Projects
 * Project 1: Facial Keypoint Detection :white_check_mark:
+* Project 2: Machine Translation :construction:
 ### Mini Projects
 
 * Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavy_check_mark:
