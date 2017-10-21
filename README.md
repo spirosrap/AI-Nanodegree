@@ -17,11 +17,11 @@
 ## Term 2: Deep Learning and Applications :construction:
 
 ### Projects
-* Project 1: Facial Keypoint Detection :construction:
+* Project 1: Facial Keypoint Detection :white_check_mark:
 ### Mini Projects
 
 * Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavy_check_mark:
-
+* Mini Project 2: Bookworm: Learn how to build a simple question-answering agent using IBM Watson :construction:
 ***
 
 ### (Old Version) Projects
