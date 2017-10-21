@@ -1,0 +1,725 @@
+{
+  "extracted_metadata": {
+    "title": "Star Wars: Episode IV - A New Hope (Opening Crawl)"
+  },
+  "html": "<?xml version='1.0' encoding='UTF-8' standalone='yes'?><html>\n<head>\n    <meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-Type\"/>\n    \n    <title>Star Wars: Episode IV - A New Hope (Opening Crawl)</title>\n\n\n</head>\n<body>\n\n\n    <article>\n        <h1>Star Wars: Episode IV - A New Hope (Opening Crawl)</h1>\n        <p>\n            It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.\n        </p><p>\n            During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.\n        </p><p>\n            Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...\n        </p>\n    </article>\n</body></html>",
+  "text": "Star Wars: Episode IV - A New Hope (Opening Crawl)\n\nStar Wars: Episode IV - A New Hope (Opening Crawl)\n\nIt is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.\n\nDuring the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.\n\nPursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...",
+  "metadata": {},
+  "enriched_text": {
+    "status": "OK",
+    "language": "english",
+    "docSentiment": {
+      "type": "negative",
+      "score": -0.575489,
+      "mixed": false
+    },
+    "concepts": [
+      {
+        "text": "Star Wars Episode IV: A New Hope",
+        "relevance": 0.98887,
+        "website": "http://www.starwars.com/movies/episode-iv",
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_Episode_IV:_A_New_Hope",
+        "freebase": "http://rdf.freebase.com/ns/m.0dtfn",
+        "opencyc": "http://sw.opencyc.org/concept/Mx4rwVH1ipwpEbGdrcN5Y29ycA"
+      },
+      {
+        "text": "Star Wars",
+        "relevance": 0.985705,
+        "website": "http://www.starwars.com",
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars",
+        "freebase": "http://rdf.freebase.com/ns/m.06mmr",
+        "yago": "http://yago-knowledge.org/resource/Star_Wars"
+      },
+      {
+        "text": "Rebel Alliance",
+        "relevance": 0.90639,
+        "dbpedia": "http://dbpedia.org/resource/Rebel_Alliance",
+        "freebase": "http://rdf.freebase.com/ns/m.0nr1k",
+        "yago": "http://yago-knowledge.org/resource/Rebel_Alliance"
+      },
+      {
+        "text": "Luke Skywalker",
+        "relevance": 0.805771,
+        "dbpedia": "http://dbpedia.org/resource/Luke_Skywalker",
+        "freebase": "http://rdf.freebase.com/ns/m.0f1bg",
+        "yago": "http://yago-knowledge.org/resource/Luke_Skywalker"
+      },
+      {
+        "text": "Star Wars Episode V: The Empire Strikes Back",
+        "relevance": 0.801062,
+        "website": "http://www.starwars.com/movies/episode-v",
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_Episode_V:_The_Empire_Strikes_Back",
+        "freebase": "http://rdf.freebase.com/ns/m.0f3m1"
+      },
+      {
+        "text": "Darth Vader",
+        "relevance": 0.777337,
+        "dbpedia": "http://dbpedia.org/resource/Darth_Vader",
+        "freebase": "http://rdf.freebase.com/ns/m.0f2y0",
+        "yago": "http://yago-knowledge.org/resource/Darth_Vader"
+      },
+      {
+        "text": "Star Wars Episode VI: Return of the Jedi",
+        "relevance": 0.77159,
+        "website": "http://www.starwars.com/movies/episode-vi",
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_Episode_VI:_Return_of_the_Jedi",
+        "freebase": "http://rdf.freebase.com/ns/m.0ddjy"
+      },
+      {
+        "text": "Grand Moff Tarkin",
+        "relevance": 0.748553,
+        "dbpedia": "http://dbpedia.org/resource/Grand_Moff_Tarkin",
+        "freebase": "http://rdf.freebase.com/ns/m.0jrsz",
+        "yago": "http://yago-knowledge.org/resource/Grand_Moff_Tarkin"
+      },
+      {
+        "text": "Star Wars Episode III: Revenge of the Sith",
+        "relevance": 0.697065,
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_Episode_III:_Revenge_of_the_Sith",
+        "freebase": "http://rdf.freebase.com/ns/m.0fdv3"
+      },
+      {
+        "text": "Princess Leia Organa",
+        "relevance": 0.607163,
+        "dbpedia": "http://dbpedia.org/resource/Princess_Leia_Organa",
+        "yago": "http://yago-knowledge.org/resource/Princess_Leia_Organa"
+      },
+      {
+        "text": "Death Star",
+        "relevance": 0.59271,
+        "dbpedia": "http://dbpedia.org/resource/Death_Star",
+        "freebase": "http://rdf.freebase.com/ns/m.0f325",
+        "yago": "http://yago-knowledge.org/resource/Death_Star"
+      },
+      {
+        "text": "Jabba the Hutt",
+        "relevance": 0.543114,
+        "dbpedia": "http://dbpedia.org/resource/Jabba_the_Hutt",
+        "freebase": "http://rdf.freebase.com/ns/m.0fjms",
+        "yago": "http://yago-knowledge.org/resource/Jabba_the_Hutt"
+      },
+      {
+        "text": "Galactic Empire",
+        "relevance": 0.523169,
+        "dbpedia": "http://dbpedia.org/resource/Galactic_Empire_(Star_Wars)",
+        "freebase": "http://rdf.freebase.com/ns/m.0hwyg",
+        "yago": "http://yago-knowledge.org/resource/Galactic_Empire_(Star_Wars)"
+      },
+      {
+        "text": "Star Wars galaxy",
+        "relevance": 0.519032,
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_galaxy",
+        "yago": "http://yago-knowledge.org/resource/Star_Wars_galaxy"
+      },
+      {
+        "text": "Star Wars Expanded Universe",
+        "relevance": 0.507885,
+        "website": "http://www.starwars.com/eu",
+        "dbpedia": "http://dbpedia.org/resource/Star_Wars_Expanded_Universe",
+        "freebase": "http://rdf.freebase.com/ns/m.01qbrc",
+        "yago": "http://yago-knowledge.org/resource/Star_Wars_Expanded_Universe"
+      },
+      {
+        "text": "Alderaan",
+        "relevance": 0.503196,
+        "dbpedia": "http://dbpedia.org/resource/Alderaan",
+        "freebase": "http://rdf.freebase.com/ns/m.065lhy",
+        "yago": "http://yago-knowledge.org/resource/Alderaan"
+      },
+      {
+        "text": "Carrie Fisher",
+        "relevance": 0.481464,
+        "dbpedia": "http://dbpedia.org/resource/Carrie_Fisher",
+        "freebase": "http://rdf.freebase.com/ns/m.01tnbn",
+        "opencyc": "http://sw.opencyc.org/concept/Mx4rwSJnvZwpEbGdrcN5Y29ycA",
+        "yago": "http://yago-knowledge.org/resource/Carrie_Fisher"
+      },
+      {
+        "text": "Jedi",
+        "relevance": 0.474365,
+        "dbpedia": "http://dbpedia.org/resource/Jedi",
+        "freebase": "http://rdf.freebase.com/ns/m.045n4",
+        "opencyc": "http://sw.opencyc.org/concept/Mx4rwNLAD5wpEbGdrcN5Y29ycA",
+        "yago": "http://yago-knowledge.org/resource/Jedi"
+      },
+      {
+        "text": "The Star Wars Holiday Special",
+        "relevance": 0.4659,
+        "dbpedia": "http://dbpedia.org/resource/The_Star_Wars_Holiday_Special",
+        "freebase": "http://rdf.freebase.com/ns/m.0199wf",
+        "yago": "http://yago-knowledge.org/resource/The_Star_Wars_Holiday_Special"
+      },
+      {
+        "text": "Wedge Antilles",
+        "relevance": 0.46456,
+        "dbpedia": "http://dbpedia.org/resource/Wedge_Antilles",
+        "freebase": "http://rdf.freebase.com/ns/m.0ddp_",
+        "yago": "http://yago-knowledge.org/resource/Wedge_Antilles"
+      },
+      {
+        "text": "English-language films",
+        "relevance": 0.460469,
+        "dbpedia": "http://dbpedia.org/resource/English-language_films"
+      },
+      {
+        "text": "Padm\u00e9 Amidala",
+        "relevance": 0.453766,
+        "dbpedia": "http://dbpedia.org/resource/Padm\u00e9_Amidala",
+        "freebase": "http://rdf.freebase.com/ns/m.0drf_",
+        "yago": "http://yago-knowledge.org/resource/Padm%C3%A9_Amidala"
+      },
+      {
+        "text": "Galactic Civil War",
+        "relevance": 0.447243,
+        "dbpedia": "http://dbpedia.org/resource/Galactic_Civil_War",
+        "freebase": "http://rdf.freebase.com/ns/m.01qc6_",
+        "yago": "http://yago-knowledge.org/resource/Galactic_Civil_War"
+      },
+      {
+        "text": "Spaceballs",
+        "relevance": 0.436864,
+        "dbpedia": "http://dbpedia.org/resource/Spaceballs",
+        "freebase": "http://rdf.freebase.com/ns/m.0j_nw",
+        "yago": "http://yago-knowledge.org/resource/Spaceballs"
+      },
+      {
+        "text": "Clone Wars",
+        "relevance": 0.43403,
+        "dbpedia": "http://dbpedia.org/resource/Clone_Wars_(Star_Wars)",
+        "freebase": "http://rdf.freebase.com/ns/m.01qc6n",
+        "yago": "http://yago-knowledge.org/resource/Clone_Wars_(Star_Wars)"
+      },
+      {
+        "text": "C-3PO",
+        "relevance": 0.432345,
+        "dbpedia": "http://dbpedia.org/resource/C-3PO",
+        "freebase": "http://rdf.freebase.com/ns/m.0g_sv",
+        "yago": "http://yago-knowledge.org/resource/C-3PO"
+      },
+      {
+        "text": "Obi-Wan Kenobi",
+        "relevance": 0.431988,
+        "dbpedia": "http://dbpedia.org/resource/Obi-Wan_Kenobi",
+        "freebase": "http://rdf.freebase.com/ns/m.0fkm7",
+        "yago": "http://yago-knowledge.org/resource/Obi-Wan_Kenobi"
+      },
+      {
+        "text": "R2-D2",
+        "relevance": 0.430085,
+        "dbpedia": "http://dbpedia.org/resource/R2-D2",
+        "freebase": "http://rdf.freebase.com/ns/m.0g_rg",
+        "yago": "http://yago-knowledge.org/resource/R2-D2"
+      }
+    ],
+    "entities": [
+      {
+        "type": "FieldTerminology",
+        "relevance": 0.972336,
+        "sentiment": {
+          "type": "negative",
+          "score": -0.409172,
+          "mixed": false
+        },
+        "count": 1,
+        "text": "civil war"
+      }
+    ],
+    "relations": [
+      {
+        "sentence": " It is a period of civil war.",
+        "subject": {
+          "text": "It"
+        },
+        "action": {
+          "text": "is",
+          "lemmatized": "be",
+          "verb": {
+            "text": "be",
+            "tense": "present"
+          }
+        },
+        "object": {
+          "text": "a period of civil war",
+          "sentiment": {
+            "type": "negative",
+            "score": -0.564509,
+            "mixed": false
+          },
+          "entities": [
+            {
+              "type": "FieldTerminology",
+              "text": "civil war"
+            }
+          ],
+          "keywords": [
+            {
+              "text": "civil war"
+            },
+            {
+              "text": "period"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.",
+        "subject": {
+          "text": "Rebel spaceships, striking from a hidden base,",
+          "keywords": [
+            {
+              "text": "Rebel spaceships"
+            },
+            {
+              "text": "hidden base"
+            }
+          ]
+        },
+        "action": {
+          "text": "have won",
+          "lemmatized": "have win",
+          "verb": {
+            "text": "win",
+            "tense": "past"
+          }
+        },
+        "object": {
+          "text": "their first victory",
+          "keywords": [
+            {
+              "text": "victory"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.",
+        "subject": {
+          "text": "Rebel spies",
+          "keywords": [
+            {
+              "text": "Rebel spies"
+            }
+          ]
+        },
+        "action": {
+          "text": "managed",
+          "lemmatized": "manage",
+          "verb": {
+            "text": "manage",
+            "tense": "past"
+          }
+        },
+        "object": {
+          "text": "to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet",
+          "sentiment": {
+            "type": "negative",
+            "score": -0.596586,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "armored space station"
+            },
+            {
+              "text": "ultimate weapon"
+            },
+            {
+              "text": "secret plans"
+            },
+            {
+              "text": "entire planet"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.",
+        "subject": {
+          "text": "Rebel spies",
+          "keywords": [
+            {
+              "text": "Rebel spies"
+            }
+          ]
+        },
+        "action": {
+          "text": "managed to steal",
+          "lemmatized": "manage to steal",
+          "verb": {
+            "text": "steal",
+            "tense": "future"
+          }
+        },
+        "object": {
+          "text": "secret plans",
+          "keywords": [
+            {
+              "text": "secret plans"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.",
+        "subject": {
+          "text": "Rebel spies",
+          "keywords": [
+            {
+              "text": "Rebel spies"
+            }
+          ]
+        },
+        "action": {
+          "text": "to destroy",
+          "lemmatized": "to destroy",
+          "verb": {
+            "text": "destroy",
+            "tense": "future"
+          }
+        },
+        "object": {
+          "text": "an entire planet",
+          "sentiment": {
+            "type": "positive",
+            "score": 0.748639,
+            "mixed": false
+          },
+          "sentimentFromSubject": {
+            "type": "negative",
+            "score": -0.754579,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "entire planet"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...",
+        "subject": {
+          "text": "by the Empire",
+          "sentiment": {
+            "type": "positive",
+            "score": 0.554106,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "Empire"
+            }
+          ]
+        },
+        "action": {
+          "text": "Pursued",
+          "lemmatized": "Pursued",
+          "verb": {
+            "text": "Pursued",
+            "tense": "past"
+          }
+        },
+        "object": {
+          "text": "Princess Leia",
+          "sentiment": {
+            "type": "positive",
+            "score": 0.682563,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "Princess Leia"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...",
+        "subject": {
+          "text": "the stolen plans",
+          "sentiment": {
+            "type": "negative",
+            "score": -0.44097,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "plans"
+            }
+          ]
+        },
+        "action": {
+          "text": "can save",
+          "lemmatized": "can save",
+          "verb": {
+            "text": "save",
+            "tense": "future"
+          }
+        },
+        "object": {
+          "text": "her people",
+          "keywords": [
+            {
+              "text": "people"
+            }
+          ]
+        }
+      },
+      {
+        "sentence": " Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...",
+        "subject": {
+          "text": "freedom",
+          "keywords": [
+            {
+              "text": "freedom"
+            }
+          ]
+        },
+        "action": {
+          "text": "restore",
+          "lemmatized": "restore",
+          "verb": {
+            "text": "restore",
+            "tense": "future"
+          }
+        },
+        "object": {
+          "text": "to the galaxy",
+          "sentimentFromSubject": {
+            "type": "positive",
+            "score": 0.698799,
+            "mixed": false
+          },
+          "keywords": [
+            {
+              "text": "galaxy"
+            }
+          ]
+        }
+      }
+    ],
+    "taxonomy": [
+      {
+        "label": "/art and entertainment/movies and tv/movies",
+        "score": 0.584247,
+        "confident": false
+      },
+      {
+        "label": "/society/unrest and war",
+        "score": 0.517031,
+        "confident": false
+      },
+      {
+        "confident": false,
+        "label": "/law, govt and politics/armed forces/army",
+        "score": 0.215561
+      }
+    ],
+    "keywords": [
+      {
+        "relevance": 0.920159,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "Opening Crawl"
+      },
+      {
+        "relevance": 0.785031,
+        "sentiment": {
+          "score": 0.447888,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "New Hope"
+      },
+      {
+        "relevance": 0.775799,
+        "sentiment": {
+          "score": 0.40059,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "Princess Leia races"
+      },
+      {
+        "relevance": 0.771384,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "Star Wars"
+      },
+      {
+        "relevance": 0.767527,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "evil Galactic Empire"
+      },
+      {
+        "relevance": 0.747615,
+        "sentiment": {
+          "score": -0.494714,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "armored space station"
+      },
+      {
+        "relevance": 0.669776,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "Rebel spaceships"
+      },
+      {
+        "relevance": 0.656828,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "Rebel spies"
+      },
+      {
+        "relevance": 0.609404,
+        "sentiment": {
+          "score": 0.484685,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "sinister agents"
+      },
+      {
+        "relevance": 0.600682,
+        "sentiment": {
+          "score": -0.409172,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "civil war"
+      },
+      {
+        "relevance": 0.597836,
+        "sentiment": {
+          "score": 0.488854,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "hidden base"
+      },
+      {
+        "relevance": 0.594694,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "ultimate weapon"
+      },
+      {
+        "relevance": 0.582765,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "secret plans"
+      },
+      {
+        "relevance": 0.582596,
+        "sentiment": {
+          "score": -0.494714,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "entire planet"
+      },
+      {
+        "relevance": 0.574413,
+        "sentiment": {
+          "score": -0.430026,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "DEATH STAR"
+      },
+      {
+        "relevance": 0.465394,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "custodian"
+      },
+      {
+        "relevance": 0.462247,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "Episode"
+      },
+      {
+        "relevance": 0.443969,
+        "sentiment": {
+          "score": 0.40059,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "starship"
+      },
+      {
+        "relevance": 0.441799,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "victory"
+      },
+      {
+        "relevance": 0.437824,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "galaxy"
+      },
+      {
+        "relevance": 0.432092,
+        "sentiment": {
+          "score": -0.409172,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "period"
+      },
+      {
+        "relevance": 0.429238,
+        "sentiment": {
+          "score": -0.37594,
+          "type": "negative",
+          "mixed": false
+        },
+        "text": "battle"
+      },
+      {
+        "relevance": 0.428916,
+        "sentiment": {
+          "score": 0.40059,
+          "type": "positive",
+          "mixed": false
+        },
+        "text": "home"
+      },
+      {
+        "relevance": 0.428498,
+        "sentiment": {
+          "type": "neutral",
+          "mixed": false
+        },
+        "text": "people"
+      }
+    ]
+  }
+}
