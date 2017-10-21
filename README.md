@@ -22,7 +22,7 @@
 ### Mini Projects
 
 * Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavy_check_mark:
-* Mini Project 2: Bookworm: Learn how to build a simple question-answering agent using IBM Watson :construction:
+* Mini Project 2: Bookworm: Learn how to build a simple question-answering agent using IBM Watson :heavy_check_mark:
 ***
 
 ### (Old Version) Projects
