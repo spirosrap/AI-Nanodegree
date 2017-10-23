@@ -25,7 +25,7 @@
 * Mini Project 2: Bookworm: Learn how to build a simple question-answering agent using IBM Watson :heavy_check_mark:
 
 ### Labs
-* Lab1: Sentiment Analysis
+* Lab1: Sentiment Analysis :heavy_check_mark:
 
 ***
 
