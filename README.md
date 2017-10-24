@@ -18,7 +18,7 @@
 
 ### Projects
 * Project 1: Facial Keypoint Detection :white_check_mark:
-* Project 2: Machine Translation :construction:
+* Project 2: Machine Translation :white_check_mark:
 * Project 3: DNN Speech Recognizer :construction:
 
 ### Mini Projects
