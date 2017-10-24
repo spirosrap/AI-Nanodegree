@@ -19,10 +19,13 @@
 ### Projects
 * Project 1: Facial Keypoint Detection :white_check_mark:
 * Project 2: Machine Translation :construction:
+* Project 3: DNN Speech Recognizer :construction:
+
 ### Mini Projects
 
 * Mini Project 1: Mimic Me: Track faces in a video and identify facial expressions using Affectiva :heavy_check_mark:
 * Mini Project 2: Bookworm: Learn how to build a simple question-answering agent using IBM Watson :heavy_check_mark:
+* Mini Project 3: Build an Alexa History Skill
 
 ### Labs
 * Lab1: Sentiment Analysis :heavy_check_mark:
