@@ -2,3 +2,14 @@ GetNewFactIntent a fact
 GetNewFactIntent tell me a fact
 GetNewFactIntent give me a fact
 GetNewFactIntent give me something
+GetNewFactIntent give me anything
+GetNewFactIntent tell me something
+GetNewFactIntent speak to me something
+GetNewFactIntent say to me anything
+GetNewFactIntent tell me anything
+GetNewFactIntent say to me something
+GetNewFactIntent say to me anything
+GetNewFactIntent say me anything
+GetNewFactIntent say to me a fact
+GetNewFactIntent drop me a fact
+GetNewFactIntent give a fact to me
