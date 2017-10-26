@@ -14,6 +14,7 @@
 * Lab 2: Solving the Traveling Salesman Problem (TSP) with Simulated Annealing :heavy_check_mark:
 * Lab 3: Constraint Satisfaction: Solving the 8-Queens problem :heavy_check_mark:
 
+
 ## Term 2: Deep Learning and Applications :construction:
 
 ### Projects
@@ -29,7 +30,7 @@
 
 ### Labs
 * Lab1: Sentiment Analysis :heavy_check_mark:
-
+* Lab2: Voice Data
 ***
 
 ### (Old Version) Projects
