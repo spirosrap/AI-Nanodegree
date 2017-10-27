@@ -30,7 +30,7 @@
 
 ### Labs
 * Lab1: Sentiment Analysis :heavy_check_mark:
-* Lab2: Voice Data
+* Lab2: Voice Data :heavy_check_mark:
 ***
 
 ### (Old Version) Projects
