@@ -1,7 +1,7 @@
 from keras import backend as K
 from keras.models import Model
 from keras.layers import (BatchNormalization, Conv1D, Dense, Input, 
-    TimeDistributed, Activation, Bidirectional, SimpleRNN, GRU, LSTM,MaxPooling1D)
+    TimeDistributed, Activation, Bidirectional, SimpleRNN, GRU, LSTM,MaxPooling1D, Dropout)
 
 def simple_rnn_model(input_dim, output_dim=29):
     """ Build a recurrent network for speech 
@@ -155,16 +155,17 @@ def final_model(kernel_size,conv_stride,conv_border_mode,input_dim,filters,units
     #tuition is that as more pooling layers are applied, units in higher
     #layers would be less discriminative with respect to the variations
     #in input features.
-    maxpool = MaxPooling1D(pool_size=2, strides=2, padding=conv_border_mode)(conv_1d)    
-    bn_rnn = BatchNormalization(name='bn_rnn0')(maxpool)
+    maxpool = MaxPooling1D(pool_size=2, strides=2, padding=conv_border_mode)(conv_1d)
+    drop = Dropout(0.3)(maxpool)
+    bn_rnn = BatchNormalization(name='bn_rnn0')(drop)
 
     #These labels are for Keras 2.0: dropout=0.2, recurrent_dropout=0.35
     bidir_rnn = Bidirectional(GRU(units, activation='relu',
-        return_sequences=True, implementation=2, name='rnn0',dropout=0.2, recurrent_dropout=0.35))(bn_rnn)
+        return_sequences=True, implementation=2, name='rnn0',dropout=0.5, recurrent_dropout=0.5))(bn_rnn)
     bn_rnn = BatchNormalization(name='bn_rnn1')(bidir_rnn)
 
     bidir_rnn = Bidirectional(GRU(units, activation='relu',
-        return_sequences=True, implementation=2, name='rnn1',dropout=0.2, recurrent_dropout=0.35))(bn_rnn)
+        return_sequences=True, implementation=2, name='rnn1',dropout=0.5, recurrent_dropout=0.5))(bn_rnn)
     bn_rnn = BatchNormalization(name='bn_rnn2')(bidir_rnn)
     
     #bidir_rnn = Bidirectional(GRU(units, activation='relu',
@@ -182,5 +183,37 @@ def final_model(kernel_size,conv_stride,conv_border_mode,input_dim,filters,units
     model.output_length = lambda x: cnn_output_length(
         x/2, kernel_size, conv_border_mode, conv_stride,dilation=2) # strides=2 so maxpool will halve the input that's why x/2.
     
+    print(model.summary())
+    return model
+
+def final_modell(kernel_size,conv_stride,conv_border_mode,input_dim,filters,units,output_dim=29):
+    """ Build a deep network for speech 
+    """
+    # Main acoustic input
+    input_data = Input(name='the_input', shape=(None, input_dim))
+    # TODO: Specify the layers in your network
+
+    #These labels are for Keras 2.0: dropout=0.2, recurrent_dropout=0.35
+    bidir_rnn = Bidirectional(GRU(units, activation='relu',
+        return_sequences=True, implementation=2, name='rnn0',dropout=0.5, recurrent_dropout=0.5))(input_data)
+    bn_rnn = BatchNormalization(name='bn_rnn1')(bidir_rnn)
+
+    bidir_rnn = Bidirectional(GRU(units, activation='relu',
+        return_sequences=True, implementation=2, name='rnn1',dropout=0.5, recurrent_dropout=0.5))(bn_rnn)
+    bn_rnn = BatchNormalization(name='bn_rnn2')(bidir_rnn)
+    
+    #bidir_rnn = Bidirectional(GRU(units, activation='relu',
+    #    return_sequences=True, implementation=2, name='rnn2'))(bn_rnn)
+    #bn_rnn = BatchNormalization(name='bn_rnn3')(bidir_rnn)
+    
+    # TODO: Add a TimeDistributed(Dense(output_dim)) layer
+    time_dense = TimeDistributed(Dense(output_dim,activation='relu'))(bn_rnn)
+
+    # TODO: Add softmax activation layer
+    y_pred = Activation('softmax', name='softmax')(time_dense)
+    # Specify the model
+    model = Model(inputs=input_data, outputs=y_pred)
+    # TODO: Specify model.output_length
+    model.output_length = lambda x: x 
     print(model.summary())
     return model
