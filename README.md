@@ -15,7 +15,7 @@
 * Lab 3: Constraint Satisfaction: Solving the 8-Queens problem :heavy_check_mark:
 
 
-## Term 2: Deep Learning and Applications :construction:
+## Term 2: Deep Learning and Applications :rocket:
 
 ### Projects
 * Project 1: Facial Keypoint Detection :white_check_mark:
