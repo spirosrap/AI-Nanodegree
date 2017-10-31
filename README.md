@@ -18,9 +18,10 @@
 ## Term 2: Deep Learning and Applications :rocket:
 
 ### Projects
-* Project 1: Facial Keypoint Detection :white_check_mark:
-* Project 2: Machine Translation :white_check_mark:
-* Project 3: DNN Speech Recognizer :white_check_mark:
+* Project 1: Dog Breed Classifier :white_check_mark:
+* Project 2: Facial Keypoint Detection :white_check_mark:
+* Project 3: Machine Translation :white_check_mark:
+* Project 4: DNN Speech Recognizer :white_check_mark:
 
 ### Mini Projects
 
@@ -31,13 +32,8 @@
 ### Labs
 * Lab1: Sentiment Analysis :heavy_check_mark:
 * Lab2: Voice Data :heavy_check_mark:
-***
 
-### (Old Version) Projects
-
-* Project 1: Dog Breed Classifier :heavy_check_mark:
-
-### (Old Version) Mini Projects
+### Other Mini Projects
 * Mini Project 1: Student Admissions in Keras :heavy_check_mark:
 * Mini Project 2: Using Keras to analyze IMDB Movie Data :heavy_check_mark:
 * Mini Project 3: Training an MLP on MNIST :heavy_check_mark:
